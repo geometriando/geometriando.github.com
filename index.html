@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Elías Alberto</title>
+    <title>Geometriando</title>
 
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -21,41 +21,193 @@
     <![endif]-->
   </head>
   <body>
-
-    <div class="container">
-        <h1><strong>Nombre del proyecto</strong></h1>
-        <p>En este texto se explica para que va a servir la página web con todos los detalles.</p>
-        <h3><strong>Contenido</strong></h3>
-        <ol>
-            <li><a href="./cuerpos-geometricos.html" target="_blank">Cuerpos Geométricos</a></li>
-            <li><a href="./caracteristicas-de-los-solidos.html" target="_blank">Características de los sólidos</a></li>
-            <li><a href="./areas-y-volumenes-de-los-solidos.html" target="_blank">Áreas y volumenes de los sólidos</a></li>
-            <li><a href="./repaso.html" target="_blank">Repaso</a></li>
-            <li><a href="./solidos-animados-a-volumenes.html" target="_blank">Sólidos animados a volumenes</a></li>
-            <li>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <span class="navbar-brand" href="#">Geometriando</span>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6 col-sm-3 col-xl-3 sidebar">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="javascript:;" onclick="showSection('#descripcion');return false;">
+                Descripción del proyecto
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;" onclick="showSection('#cuerpos-geometricos');return false;">
+                Cuerpos Geométricos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;" onclick="showSection('#caracteristicas-de-los-solidos');return false;">
+                Características de los sólidos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;" onclick="showSection('#areas-y-volumenes-de-los-solidos');return false;">
+                Áreas y volumenes de los sólidos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;" onclick="showSection('#repaso');return false;">
+                Repaso
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;" onclick="showSection('#solidos-animados-a-volumenes');return false;">
+                Sólidos animados a volumenes
+              </a>
+            </li>
+            <li class="nav-item">
+              <span>
                 Ejercicios interactivos
-                <ol>
-                    <li><a href="./ejercicios-de-areas-perimetro-superficie-y-volumen.html" target="_blank">Ejercicios de área, perímetro, superficie y volumen</a></li>
-                    <li><a href="./ejercicios-sobre-figuras.html" target="_blank">Ejercicios sobre figuras</a></li>
-                </ol>
+              </span>
+              <ul>
+                  <li>
+                    <a class="nav-link" href="javascript:;" onclick="showSection('#ejercicios-de-areas-perimetro-superficie-y-volumen');return false;">
+                      Ejercicios de área, perímetro, superficie y volumen
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="javascript:;" onclick="showSection('#ejercicios-sobre-figuras');return false;">
+                      Ejercicios sobre figuras
+                    </a>
+                  </li>
+              </ul>
             </li>
-            <li>
+            <li class="nav-item">
+              <span>
                 Videos
-                <ol>
-                    <li><a href="./conceptos-basicos-geometria.html" target="_blank">Conceptos básicos geometría</a></li>
-                    <li><a href="./formulario-de-areas-y-perimetros.html" target="_blank">Fórmulas de áreas y perímetros</a></li>
-                    <li><a href="./prismas.html" target="_blank">Prismas</a></li>
-                    <li><a href="./catetos.html" target="_blank">Catetos</a></li>
-                </ol>
+              </span>
+              <ul>
+                  <li>
+                    <a class="nav-link" href="javascript:;" onclick="showSection('#conceptos-basicos-geometria');return false;">
+                      Conceptos básicos geometría
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="javascript:;" onclick="showSection('#formulas-de-areas-y-perimetros');return false;">
+                      Fórmulas de áreas y perímetros
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="javascript:;" onclick="showSection('#prismas');return false;">
+                      Prismas
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="javascript:;" onclick="showSection('#catetos');return false;">
+                      Catetos
+                    </a>
+                  </li>
+              </ul>
             </li>
-            <li>
+            <li class="nav-item">
+              <span>
                 Encuestas
-                <ol>
-                    <li><a href="./encuesta-grado-7.html" target="_blank">Encuesta Grado 7</a></li>
-                    <li><a href="./encuesta-grado-9.html" target="_blank">Encuesta Grado 9</a></li>
-                </ol>
+              </span>
+              <ul>
+                  <li>
+                    <a class="nav-link" href="javascript:;" onclick="showSection('#encuesta-grado-7');return false;">
+                      Encuesta Grado 7
+                    </a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="javascript:;" onclick="showSection('#encuesta-grado-9');return false;">
+                      Encuesta Grado 9
+                    </a>
+                  </li>
+              </ul>
             </li>
-        </ol>
+          </ul>
+        </div>
+        <div class="col-6 col-sm-9 col-xl-9 offset-6 offset-sm-3 offset-xl-3">
+          <div id="descripcion" class="content">
+            <h1><strong>Descripción del proyecto</strong></h1>
+            <p>Geometriando es una plataforma en línea en la que puedes complementar el aprendizaje la geometría y está diseñada especialmente para los estudiantes de la IED Prado Veraniego.</p>
+            <img src='./assets/img/jackson-jost-RMynbTjDu_g-unsplash.jpeg' class="img-description"/>
+          </div>
+
+          <div id="cuerpos-geometricos" class="content d-none">
+            <h1><strong>Cuerpos Geométricos</strong></h1>
+            <br/>
+            <iframe src="./assets/pdfs/cuerpos-geometricos.pdf" class="pdf-container"> </iframe>
+          </div>
+
+          <div id="caracteristicas-de-los-solidos" class="content d-none">
+            <h1><strong>Características de los sólidos</strong></h1>
+            <br/>
+            <iframe src="./assets/pdfs/caracteristicas-de-los-solidos.pdf" class="pdf-container"> </iframe>
+          </div>
+
+          <div id="areas-y-volumenes-de-los-solidos" class="content d-none">
+            <h1><strong>Áreas y volumenes de los sólidos</strong></h1>
+            <br/>
+            <iframe src="./assets/pdfs/areas-y-volumenes-de-los-solidos.pdf" class="pdf-container"> </iframe>
+          </div>
+
+          <div id="repaso" class="content d-none">
+            <h1><strong>Repaso</strong></h1>
+            <br/>
+            <iframe src="./assets/pdfs/Repaso.pdf" class="pdf-container"> </iframe>
+          </div>
+
+          <div id="solidos-animados-a-volumenes" class="content d-none">
+            <h1><strong>Sólidos animados a volumenes</strong></h1>
+            <br/>
+            <iframe src="./assets/pdfs/solidos-animados-a-volumenes.pdf" class="pdf-container"> </iframe>
+          </div>
+
+          <div id="ejercicios-de-areas-perimetro-superficie-y-volumen" class="content d-none">
+            <h1><strong>Ejercicios de área, perímetro, superficie y volumen</strong></h1>
+            <br/>
+            <iframe src="https://www.thatquiz.org/es-4/matematicas/geometria/" class="pdf-container"> </iframe>
+          </div>
+
+          <div id="ejercicios-sobre-figuras" class="content d-none">
+            <h1><strong>Ejercicios sobre figuras</strong></h1>
+            <br/>
+            <iframe src="https://www.thatquiz.org/es-f/matematicas/figuras/" class="pdf-container"> </iframe>
+          </div>
+
+          <div id="conceptos-basicos-geometria" class="content d-none">
+            <h1><strong>Conceptos básicos geometría</strong></h1>
+            <br/>
+            <iframe id='video-conceptos-basicos-geometria' src="https://www.youtube.com/embed/f3dLvwE8RIM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="pdf-container"> </iframe>
+          </div>
+
+          <div id="formulas-de-areas-y-perimetros" class="content d-none">
+            <h1><strong>Fórmulas de áreas y perímetros</strong></h1>
+            <br/>
+            <iframe id='video-formulas-de-areas-y-perimetros' src="https://www.youtube.com/embed/XZgBePlssiw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="pdf-container"> </iframe>
+          </div>
+
+          <div id="prismas" class="content d-none">
+            <h1><strong>Prismas</strong></h1>
+            <br/>
+            <iframe id='video-prismas' src="https://www.youtube.com/embed/K1SONSUwXAg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="pdf-container"> </iframe>
+          </div>
+
+          <div id="catetos" class="content d-none">
+            <h1><strong>Catetos</strong></h1>
+            <br/>
+            <iframe id='video-catetos' src="https://www.youtube.com/embed/tWZ-17wRNMM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="pdf-container"> </iframe>
+          </div>
+
+          <div id="encuesta-grado-7" class="content d-none">
+            <h1><strong>Encuesta Grado 7</strong></h1>
+            <br/>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScXwbT2lgNyi81DNSCypsbYlX9Vp0Fj-n7fhjPsT08kx_ZYRw/viewform?embedded=true" class="pdf-container">Cargando...</iframe>
+          </div>
+
+          <div id="encuesta-grado-9" class="content d-none">
+            <h1><strong>Encuesta Grado 9</strong></h1>
+            <br/>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdD2b8feznBnrVWrNGO0iqjno9VBHvjG6EkFkoXYF9f08Jb8A/viewform?embedded=true" class="pdf-container">Cargando...</iframe>
+          </div>
+
+        </div>
+      </div>
     </div>
 
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
@@ -63,5 +215,16 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+      function showSection(section) {
+        console.log(section)
+        $('.content').addClass("d-none")
+        $(section).removeAttr('class').attr('class', 'content')
+        $( '#video-conceptos-basicos-geometria' ).attr( 'src', function ( i, val ) { return val })
+        $( '#video-formulas-de-areas-y-perimetros' ).attr( 'src', function ( i, val ) { return val })
+        $( '#video-prismas' ).attr( 'src', function ( i, val ) { return val })
+        $( '#video-catetos' ).attr( 'src', function ( i, val ) { return val })
+      }
+    </script>
   </body>
 </html>
