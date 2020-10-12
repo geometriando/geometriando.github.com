@@ -161,13 +161,13 @@
           <div id="ejercicios-de-areas-perimetro-superficie-y-volumen" class="content d-none">
             <h1><strong>Ejercicios de área, perímetro, superficie y volumen</strong></h1>
             <br/>
-            <iframe src="https://www.thatquiz.org/es-4/matematicas/geometria/" class="pdf-container"> </iframe>
+            <iframe sandbox="allow-scripts" src="https://www.thatquiz.org/es-4/matematicas/geometria/" class="pdf-container"> </iframe>
           </div>
 
           <div id="ejercicios-sobre-figuras" class="content d-none">
             <h1><strong>Ejercicios sobre figuras</strong></h1>
             <br/>
-            <iframe src="https://www.thatquiz.org/es-f/matematicas/figuras/" class="pdf-container"> </iframe>
+            <iframe sandbox="allow-scripts" src="https://www.thatquiz.org/es-f/matematicas/figuras/" class="pdf-container"> </iframe>
           </div>
 
           <div id="conceptos-basicos-geometria" class="content d-none">
@@ -246,6 +246,17 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180472513-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-180472513-1');
+    </script>
+    
     <script>
       function showSection(section) {
         console.log(section)
@@ -270,6 +281,12 @@
             'evento': section
           })
         })
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Section',
+          eventAction: 'show',
+          eventLabel: section
+        });
       }
 
       function validate_fields() {
