@@ -210,9 +210,40 @@
       </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Geometriando</h5>
+          </div>
+          <div class="modal-body">
+            <p>Antes de entrar, necesitamos un par de datos:</p>
+            <div class="form-group">
+              <label for="InputName"><strong>Nombres y Apellidos</strong></label>
+              <input type="text" class="form-control" id="InputName" placeholder="Escribe tus nombres y apellidos aquí">
+              <div class="invalid-feedback">
+                Este campo debe tener al menos 9 letras
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="InputYear"><strong>Grado</strong></label>
+              <input type="text" class="form-control" id="InputYear" placeholder="Escribe tu grado. Por ejemplo, 9">
+              <div class="invalid-feedback">
+                Este campo debe tener solo números
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="loginButton" class="btn btn-primary">ENTRAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
     <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script>
@@ -224,7 +255,81 @@
         $( '#video-formulas-de-areas-y-perimetros' ).attr( 'src', function ( i, val ) { return val })
         $( '#video-prismas' ).attr( 'src', function ( i, val ) { return val })
         $( '#video-catetos' ).attr( 'src', function ( i, val ) { return val })
+        $.ajax({
+          type: "POST",
+          url: "https://api.curubagram.com/geometriando_event",
+          dataType: 'json',
+          contentType: 'application/json',
+          context: document.body,
+          success: function(result) {
+            $('#loginButton').removeAttr('disabled')
+          },
+          data: JSON.stringify({
+            'usuario': localStorage.getItem('usuario'),
+            'grado': localStorage.getItem('grado'),
+            'evento': section
+          })
+        })
       }
+
+      function validate_fields() {
+        InputName = $('#InputName')
+        InputYear = $('#InputYear')
+        InputName.removeClass('is-invalid')
+        InputYear.removeClass('is-invalid')
+        let flag = true
+
+        if (InputName.val().length < 9) {
+          InputName.addClass('is-invalid')
+          flag = false
+        }
+
+        if (isNaN(InputYear.val()) || InputYear.val().length == 0) {
+          InputYear.addClass('is-invalid')
+          flag = false
+        }
+
+        return flag
+      }
+
+      $( document ).ready(function() {
+        console.log(localStorage.getItem('usuario'))
+        if (localStorage.getItem('usuario') == null) {
+          $('#exampleModal').modal({
+              backdrop: 'static',
+              keyboard: false
+          })
+          $('#exampleModal').modal('show')
+        }
+
+        $('#loginButton').on('click', function() {
+          console.log('ENTRA')
+          $('#loginButton').attr('disabled','')
+          valid_fields = validate_fields()
+          if (valid_fields) {
+            localStorage.setItem('usuario', $('#InputName').val())
+            localStorage.setItem('grado', $('#InputYear').val())
+            $.ajax({
+              type: "POST",
+              url: "https://api.curubagram.com/geometriando_event",
+              dataType: 'json',
+              contentType: 'application/json',
+              context: document.body,
+              success: function(result) {
+                $('#loginButton').removeAttr('disabled')
+              },
+              error: function(e) {
+                $('#loginButton').removeAttr('disabled')
+              },
+              data: JSON.stringify({
+                'usuario': $('#InputName').val(),
+                'grado': $('#InputYear').val(),
+                'evento': 'Login'
+              })
+            })
+          }
+        })
+      })
     </script>
   </body>
 </html>
