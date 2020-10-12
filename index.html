@@ -317,6 +317,7 @@
               context: document.body,
               success: function(result) {
                 $('#loginButton').removeAttr('disabled')
+                $('#exampleModal').modal('hide')
               },
               error: function(e) {
                 $('#loginButton').removeAttr('disabled')
