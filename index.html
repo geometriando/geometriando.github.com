@@ -286,7 +286,31 @@
           eventCategory: 'Section',
           eventAction: 'show',
           eventLabel: section
-        });
+        })
+      }
+
+      function show_home() {
+        $.ajax({
+          type: "POST",
+          url: "https://api.curubagram.com/geometriando_event",
+          dataType: 'json',
+          contentType: 'application/json',
+          context: document.body,
+          success: function(result) {
+            $('#loginButton').removeAttr('disabled')
+          },
+          data: JSON.stringify({
+            'usuario': localStorage.getItem('usuario'),
+            'grado': localStorage.getItem('grado'),
+            'evento': '#descripcion'
+          })
+        })
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'Section',
+          eventAction: 'show',
+          eventLabel: '#descripcion'
+        })
       }
 
       function validate_fields() {
@@ -310,6 +334,8 @@
       }
 
       $( document ).ready(function() {
+        show_home()
+
         console.log(localStorage.getItem('usuario'))
         if (localStorage.getItem('usuario') == null) {
           $('#exampleModal').modal({
